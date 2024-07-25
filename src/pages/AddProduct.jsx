@@ -9,14 +9,17 @@ import "simplebar-react/dist/simplebar.min.css";
 import "./AddProduct.css";
 
 const DynamicTable = () => {
+    //State initialization
     const [columns, setColumns] = useState(["Products", "Primary Variant"]);
     const [rows, setRows] = useState([1]);
 
+    //Add Variants
     const addColumn = () => {
         const newColumn = `Variant ${columns.length}`;
         setColumns([...columns, newColumn]);
     };
 
+    //Remove Variants
     const removeColumn = (columnToRemove) => {
         if (columnToRemove === "Primary Variant" || columns.length === 2) {
             return;
@@ -25,11 +28,13 @@ const DynamicTable = () => {
         setColumns(updatedColumns);
     };
 
+    //Add Products
     const addRow = () => {
         const newRow = rows.length + 1;
         setRows([...rows, newRow]);
     };
 
+    //Add Products
     const removeRow = (rowIndex) => {
         if (rowIndex === 0) {
             return;
@@ -38,6 +43,7 @@ const DynamicTable = () => {
         setRows(updatedRows);
     };
 
+    //Drag and drop reorder
     const onDragEnd = (result) => {
         if (!result.destination) return;
         const items = Array.from(rows);
