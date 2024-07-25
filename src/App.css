@@ -1,38 +1,56 @@
-.App {
-  text-align: center;
+button {
+    cursor: pointer;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.image-uploader {
+    position: relative;
+    width: 300px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.dropzone {
+    border: 2px dashed #ccc;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.3s;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.dropzone.has-image {
+    border-color: #4caf50;
 }
 
-.App-link {
-  color: #61dafb;
+.edit-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn {
+    border: 0;
+    padding: 2px 8px;
+    border-radius: 5px;
+    transition: all 200ms linear;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
+.btn-plus {
+    color: #f2f2f2;
+    background-color: #134b70;
+}
+
+.btn-plus:hover {
+    background-color: #1b6597;
+}
+
+.btn-remove {
+    color: #f2f2f2;
+    background-color: #ff0000;
+    margin-left: 10px;
 }
